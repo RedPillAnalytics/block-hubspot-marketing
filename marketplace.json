@@ -1,0 +1,35 @@
+{
+  "label": "Hubspot Marketing",
+  "category_label": "Models",
+  "branding": {
+    "image_uri": "https://marketplace-api.looker.com/block-icons/hubspot_icon.png",
+    "tagline": "This Block provides a comprehensive overview of all Hubspot Marketing functions, including email campaign performance, contact list changes and subscription growth."
+  },
+
+  "constants": {
+    "CONNECTION_NAME": {
+      "label": "Connection Name",
+      "value_constraint": "connection"
+    },
+    "SCHEMA_NAME": {
+      "label": "Hubspot Schema Name"
+    },
+    "CONFIG_PROJECT_NAME": {
+      "label": "Config Project Name"
+    }
+  },
+  "models": [
+    {
+      "name": "block_hubspot",
+      "connection_constant": "CONNECTION_NAME"
+    }
+  ],
+  "auxiliary_projects": [
+    {
+      "git_uri": "git://github.com/looker/block-hubspot-marketing-config.git",
+      "git_ref": "b35a4a033079daa79d1066107eff10832a455809",
+      "label": "Hubspot Marketing Config",
+      "constant_name": "CONFIG_PROJECT_NAME"
+    }
+  ]
+}
