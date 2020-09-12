@@ -1,12 +1,12 @@
-include: "//@{CONFIG_PROJECT_NAME}/form.view.lkml" 
-        
-        
+#include: "//@{CONFIG_PROJECT_NAME}/form.view.lkml"
+
+
 view: form {
-  extends: [form_config]
+  extends: [form_core]
 }
 
 ###################################################
-        
+
 view: form_core {
   sql_table_name: @{DATASET_NAME}.FORM ;;
 

@@ -1,12 +1,12 @@
-include: "//@{CONFIG_PROJECT_NAME}/calendar_event.view.lkml" 
-        
-        
+#include: "//@{CONFIG_PROJECT_NAME}/calendar_event.view.lkml"
+
+
 view: calendar_event {
-  extends: [calendar_event_config]
+  extends: [calendar_event_core]
 }
 
 ###################################################
-        
+
 view: calendar_event_core {
   sql_table_name: @{DATASET_NAME}.CALENDAR_EVENT ;;
   drill_fields: [id]

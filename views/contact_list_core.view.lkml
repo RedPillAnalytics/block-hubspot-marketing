@@ -1,12 +1,12 @@
-include: "//@{CONFIG_PROJECT_NAME}/contact_list.view.lkml" 
-        
-        
+#include: "//@{CONFIG_PROJECT_NAME}/contact_list.view.lkml"
+
+
 view: contact_list {
-  extends: [contact_list_config]
+  extends: [contact_list_core]
 }
 
 ###################################################
-        
+
 view: contact_list_core {
   sql_table_name: @{DATASET_NAME}.CONTACT_LIST ;;
   drill_fields: [id]

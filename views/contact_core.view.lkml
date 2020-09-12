@@ -1,8 +1,8 @@
-include: "//@{CONFIG_PROJECT_NAME}/contact.view.lkml"
+#include: "//@{CONFIG_PROJECT_NAME}/contact.view.lkml"
 
 
 view: contact {
-  extends: [contact_config]
+  extends: [contact_core]
 }
 
 ###################################################

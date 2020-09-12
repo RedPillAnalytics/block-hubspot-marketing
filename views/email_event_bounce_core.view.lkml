@@ -1,8 +1,8 @@
-include: "//@{CONFIG_PROJECT_NAME}/email_event_bounce.view.lkml"
+#include: "//@{CONFIG_PROJECT_NAME}/email_event_bounce.view.lkml"
 
 
 view: email_event_bounce {
-  extends: [email_event_bounce_config]
+  extends: [email_event_bounce_core]
 }
 
 ###################################################

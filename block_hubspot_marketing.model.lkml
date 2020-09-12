@@ -8,9 +8,9 @@ include: "//@{CONFIG_PROJECT_NAME}/*.model.lkml"
 include: "//@{CONFIG_PROJECT_NAME}/*.dashboard"
 
 explore: contact {
-  extends: [contact_config]
+  extends: [contact_core]
 }
 
 explore: owner {
-  extends: [owner_config]
+  extends: [owner_core]
 }

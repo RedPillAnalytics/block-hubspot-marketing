@@ -1,19 +1,19 @@
-project_name: "block-hubspot-marketing"
+project_name: "hubspot_demo"
 
 ################ Constants ################
 
 constant: CONFIG_PROJECT_NAME {
-  value: "block-hubspot-marketing-config"
+  value: "hubspot_demo"
   export: override_required
 }
 
 constant: CONNECTION_NAME {
-  value: "connection name"
+  value: "snowflake-demo"
   export: override_required
 }
 
 constant: DATASET_NAME {
-  value: "dataset"
+  value: "HUBSPOT"
   export: override_required
 }
 
@@ -22,6 +22,14 @@ constant: DATASET_NAME {
 
 local_dependency: {
   project: "@{CONFIG_PROJECT_NAME}"
+
+  override_constant: CONFIG_PROJECT_NAME {
+    value: "hubspot_demo"
+  }
+
+  override_constant: CONNECTION_NAME {
+    value: "snowflake-demo"
+  }
 
   override_constant: DATASET_NAME {
     value: "@{DATASET_NAME}"

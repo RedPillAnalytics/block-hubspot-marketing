@@ -1,8 +1,8 @@
-include: "//@{CONFIG_PROJECT_NAME}/email_event_open.view.lkml"
+#include: "//@{CONFIG_PROJECT_NAME}/email_event_open.view.lkml"
 
 
 view: email_event_open {
-  extends: [email_event_open_config]
+  extends: [email_event_open_core]
 }
 
 ###################################################

@@ -1,8 +1,8 @@
-include: "//@{CONFIG_PROJECT_NAME}/email_subscription_change.view.lkml"
+#include: "//@{CONFIG_PROJECT_NAME}/email_subscription_change.view.lkml"
 
 
 view: email_subscription_change {
-  extends: [email_subscription_change_config]
+  extends: [email_subscription_change_core]
 }
 
 ###################################################

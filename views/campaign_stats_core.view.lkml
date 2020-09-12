@@ -1,8 +1,8 @@
-include: "//@{CONFIG_PROJECT_NAME}/campaign_stats.view.lkml"
+#include: "//@{CONFIG_PROJECT_NAME}/campaign_stats.view.lkml"
 
 
 view: campaign_stats {
-  extends: [campaign_stats_config]
+  extends: [campaign_stats_core]
 }
 
 ###################################################
@@ -39,7 +39,7 @@ view: campaign_stats_core {
         value: "1 years"
       }
     }
-    sql_trigger_value: SELECT CURRENT_DATE() ;;
+    #sql_trigger_value: SELECT CURRENT_DATE() ;;
   }
 
   dimension: id {
@@ -81,21 +81,21 @@ view: campaign_stats_core {
   measure: average_delivery_rate {
     type: number
     description: "Percent of sent emails that were successfully delivered."
-    sql: SAFE_DIVIDE(SUM(${delivered_count}), SUM(${sent_count})) ;;
+    sql: (SUM(${delivered_count})/ NULLIF(SUM(${sent_count}), 0)) ;;
     value_format_name: percent_2
   }
 
   measure: average_open_rate {
     type: number
     description: "Percent of sent emails that were opened."
-    sql: SAFE_DIVIDE(SUM(${opened_count}), SUM(${sent_count})) ;;
+    sql: (SUM(${opened_count})/ NULLIF(SUM(${sent_count}), 0));;
     value_format_name: percent_2
   }
 
   measure: average_conversion_rate {
     description: "Percent of sent emails that lead to a conversion."
     type: number
-    sql: SAFE_DIVIDE(SUM(${conversions}), SUM(${sent_count})) ;;
+    sql: (SUM(${conversions})/ NULLIF(SUM(${sent_count}),0)) ;;
     value_format_name: percent_2
   }
 

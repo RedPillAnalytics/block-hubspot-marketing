@@ -1,8 +1,8 @@
-include: "//@{CONFIG_PROJECT_NAME}/sequences.view.lkml"
+#include: "//@{CONFIG_PROJECT_NAME}/sequences.view.lkml"
 
 
 view: sequences {
-  extends: [sequences_config]
+  extends: [sequences_core]
 }
 
 ###################################################
@@ -43,7 +43,7 @@ view: sequences_inner {
 
 view: sequences_core {
   derived_table: {
-    persist_for: "24 hours"
+    #persist_for: "24 hours"
     sql:
       SELECT
         inner_table.email  AS email,

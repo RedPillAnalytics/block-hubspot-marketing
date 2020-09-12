@@ -1,12 +1,12 @@
-include: "//@{CONFIG_PROJECT_NAME}/email_event_print.view.lkml" 
-        
-        
+#include: "//@{CONFIG_PROJECT_NAME}/email_event_print.view.lkml"
+
+
 view: email_event_print {
-  extends: [email_event_print_config]
+  extends: [email_event_print_core]
 }
 
 ###################################################
-        
+
 view: email_event_print_core {
   sql_table_name: @{DATASET_NAME}.EMAIL_EVENT_PRINT ;;
   drill_fields: [id]
